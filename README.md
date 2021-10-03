@@ -1,5 +1,6 @@
-# tag_p2_unb
+# P2 (TAG - 2021.1 - 202033202): Algoritmo Gale-Shapley
 Projeto 2 de Teoria e Aplicação de Grafos, disciplina ofertada na Universidade de Brasília (UnB) no semestre 2021.1.
+Desenvolvido por Gabriel Mendes Ciriatico Guimarães, de matrícula 202033202.
 
 ## Algoritmo adaptado
 
