@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 def projects_students_lists_from_file(file):
     # Lida com a leitura do arquivo .txt com os dados de estudantes e projetos
     with open(file) as f:
@@ -46,6 +52,10 @@ def projects_students_lists_from_file(file):
     
     return projects, students
 
+
+# In[2]:
+
+
 def index_lim_grade(students, st_list, s, p):
     # Retorna índice onde inserir um estudante dado na lista de um projeto, considerando sua nota e sua preferência
     gs = students[s]["grade"]
@@ -62,6 +72,10 @@ def index_lim_grade(students, st_list, s, p):
             return i + 1
     
     return i
+
+
+# In[3]:
+
 
 def insert_pref_projects(projects, students):
     # Elaboração da lista de preferência dos projetos
@@ -82,6 +96,10 @@ def insert_pref_projects(projects, students):
         projects_pref[p]["pref_list"] = s_in_p
     
     return projects_pref
+
+
+# In[4]:
+
 
 def gale_shapley_algorithm_projects(projects, students):
     # O algoritmo aplicado dá prioridade aos projetos, cujas preferências já estão estabelecidas previamente
@@ -146,6 +164,10 @@ def gale_shapley_algorithm_projects(projects, students):
     
     return matchings
 
+
+# In[5]:
+
+
 def print_it_alg(i, sub, p, s, full_p=False, all_checked_p=False, p_ant_of_s=None):
     if i == 0:
         print("\n------10 primeiras iterações:------\n")
@@ -164,6 +186,10 @@ def print_it_alg(i, sub, p, s, full_p=False, all_checked_p=False, p_ant_of_s=Non
 
     print(txt_loop)
 
+
+# In[6]:
+
+
 def order_matchings(mat):
     # Organiza os emparelhamentos feitos, que estavam em lista, para um dicionário, com cada projeto sendo uma chave
     
@@ -179,6 +205,10 @@ def order_matchings(mat):
         matchings[k] = students
     
     return matchings
+
+
+# In[7]:
+
 
 def remove_rem_projects(projects_mat, projects):
     # Remove do dicionário projetos que não tenham preenchido todas as vagas
@@ -199,7 +229,27 @@ def remove_rem_projects(projects_mat, projects):
         
     return projects_mat, rem_projects
 
-def print_matchings_p(mat, projects):
+
+# In[8]:
+
+
+def print_header_matchings(mat, rem_mat):
+    print("\n\n")
+    print("----------Emparelhamento estável máximo obtido:----------")
+    print("          Número de projetos viáveis: {0}".format(len(mat)))
+    print("          Número de projetos descartados: {0}".format(len(rem_mat)))
+    print("\n")
+
+
+# In[9]:
+
+
+def print_matchings_p(mat, projects, full):
+    if full:
+        print(">-----Projetos viáveis, com todas vagas preenchidas:-----<\n\n")
+    else:
+        print(">--------Projetos descartados, com vagas sobrando:--------<\n")
+    
     for p in mat.keys():
         ef_insc = len(mat[p])
         av_insc = projects[p]["max_stud"]
@@ -215,22 +265,35 @@ def print_matchings_p(mat, projects):
 
         print(txt_full)
 
+
+# In[10]:
+
+
 path_file_txt = "entradaProj2TAG.txt"
 projects, students = projects_students_lists_from_file(path_file_txt)
 # As litas de preferências dos projetos são feitas de forma separada
 projects = insert_pref_projects(projects, students)
 
+
+# In[11]:
+
+
 mat = gale_shapley_algorithm_projects(projects, students)
 mat = order_matchings(mat)
 mat, rem_mat = remove_rem_projects(mat, projects)
 
-print("\n\n")
-print("----------Emparelhamento estável máximo obtido:----------")
-print("          Número de projetos viáveis: {0}".format(len(mat)))
-print("          Número de projetos descartados: {0}".format(len(rem_mat)))
-print("\n")
-print(">-----Projetos viáveis, com todas vagas preenchidas:-----<\n")
-print_matchings_p(mat, projects)
-print()
-print(">--------Projetos descartados, com vagas sobrando:--------<\n")
-print_matchings_p(rem_mat, projects)
+
+# In[12]:
+
+
+# Impressão das informações sobre o emparelhamento estável encontrado
+print_header_matchings(mat, rem_mat)
+print_matchings_p(mat, projects, full=True)
+print_matchings_p(rem_mat, projects, full=False)
+
+
+# In[ ]:
+
+
+
+
