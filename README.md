@@ -12,11 +12,11 @@ Por isso, foi desenvolvido também um algoritmo para criação das listas de pre
 
 O pseudocódigo abaixo mostra a criação dessas listas:
 
-<p align="center"><img src="media/algoritmo_list_preferencias_projetos.PNG" alt="pseudocode_algorithm" style="width:60%;"/></p>
+<p align="center"><img src="media/algoritmo_list_preferencias_projetos.PNG" alt="pseudocode_algorithm" style="width:65%;"/></p>
 
 Já para o algoritmo Gale-Shapley adaptado para o emparelhamento estável máximo de projetos e estudantes pode ser visto abaixo. Note que a preferência é dada para os projetos na escolha, e não para os estudantes.
 
-<p align="center"><img src="media/pseudocode_algoritmo_adaptado.PNG" alt="pseudocode_algorithm" style="width:60%;"/></p>
+<p align="center"><img src="media/pseudocode_algoritmo_adaptado.PNG" alt="pseudocode_algorithm" style="width:65%;"/></p>
 
 ## Compilação
 Para utilizar o projeto desenvolvido, certifique-se que os arquivos .py e .txt estão na mesma pasta.
