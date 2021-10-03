@@ -4,7 +4,7 @@ Desenvolvido por Gabriel Mendes Ciriatico Guimarães, de matrícula 202033202.
 
 ## Algoritmo adaptado
 
-O algoritmo Gale-Shapley desenvolvido se baseou em duas versões: a de X, focada em emparelhamento de casais, com formação de pares; e a de Y, de onde foi analisado o algoritmo que dava prioridade a aulas, ao invés de estudantes.
+O algoritmo Gale-Shapley desenvolvido se baseou em duas versões: a de Satyal (2017, disponível em: https://medium.com/@satyalumesh/gale-shapley-algorithm-for-stable-matching-easyexpalined-17ee51ec0dfa), focada em emparelhamento de casais, com formação de pares; e a de Abraham, Irving e Manlove (2007), de onde foi analisado o algoritmo que dava prioridade a aulas, ao invés de estudantes.
 
 Essas duas adaptações que foram usadas como base para este projeto partem do princípio de que há listas de preferências de ambos os conjuntos dados já feitas. O arquivo entradaProj2TAG.txt, que contém os dados sobre alunos e projetos, dá apenas as listas de preferências dos alunos.
 
