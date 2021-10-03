@@ -16,3 +16,26 @@ O pseudocódigo abaixo mostra a criação dessas listas:
 Já para o algoritmo Gale-Shapley adaptado para o emparelhamento estável máximo de projetos e estudantes pode ser visto abaixo. Note que a preferência é dada para os projetos na escolha, e não para os estudantes.
 
 <p align="center"><img src="media/pseudocode_algoritmo_adaptado.PNG" alt="pseudocode_algorithm" style="width:60%;"/></p>
+
+## Compilação
+Para utilizar o projeto desenvolvido, certifique-se que os arquivos .py e .txt estão na mesma pasta.
+
+Depois, compile o arquivo .py no terminal.
+
+```console
+python tag_p2_202033202.py
+```
+
+## Resultados
+
+Após a compilação, serão imprimidas informações sobre o emparelhamento máximo estável obtido:
+
+<ul>
+<li>10 primeiras iterações dentro do laço no algoritmo, com duplas inscrições realizadas em cada iteração;</li>
+<li>Informações gerais sobre o emparelhamento máximo estável obtido, com número de projetos totalmente preenchidos e projetos descartados por terem vagas sobrando;</li>
+<li>Informações detalhadas sobre os projetos formados, com os estudantes de cada um;</li>
+<li>Informações sobre os projetos descartados, com número de vagas sobrando.</li>
+</ul>
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
